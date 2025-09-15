@@ -1,0 +1,7 @@
+npm i @nestjs/typeorm typeorm pg sqlite3
+npm i @nestjs/swagger
+npm i @nestjs/config
+npm i @nestjs/jwt
+npm i @nestjs/passport passport passport-jwt
+npm i class-validator class-transformer
+npm i argon2
