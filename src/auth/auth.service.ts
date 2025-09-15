@@ -37,11 +37,11 @@ export class AuthService {
     }
 
     async login(credentialsDto: CredentialsDto): Promise<TokensDto> {
-        const user = await this.usersService.findOneBy({
-            email: credentialsDto.email
-        });
+        const user = await this.usersService.query()
+            .where('user.email = :email', { email: credentialsDto.email })
+            .getOne()
         
-        if (!(await user.validatePassword(credentialsDto.password)))
+        if (!user || !(await user.validatePassword(credentialsDto.password)))
             throw new UnauthorizedException('Invalid credentials.');
 
         return this.generateTokens(user);
