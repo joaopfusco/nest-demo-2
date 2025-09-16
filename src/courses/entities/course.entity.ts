@@ -1,11 +1,11 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { EntityBase } from "src/common/entities/base.entity";
+import { BaseEntity } from "src/common/entities/base.entity";
 import { Enrollment } from "src/enrollments/entities/enrollment.entity";
 import { User } from "src/users/entities/user.entity";
 import { Column, Entity, ForeignKey, JoinColumn, ManyToOne, OneToMany } from "typeorm";
 
 @Entity('courses')
-export class Course extends EntityBase {
+export class Course extends BaseEntity {
     @ApiProperty()
     @Column()
     title: string;

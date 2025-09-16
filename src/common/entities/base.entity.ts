@@ -3,10 +3,9 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  BaseEntity,
 } from 'typeorm';
 
-export abstract class EntityBase extends BaseEntity {
+export abstract class BaseEntity {
     @ApiProperty()
     @PrimaryGeneratedColumn('uuid')
     id: string;

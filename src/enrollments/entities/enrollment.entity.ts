@@ -1,12 +1,12 @@
 import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
 import { EnrollmentStatus } from "../enums/enrollment-status.enum";
-import { EntityBase } from "src/common/entities/base.entity";
+import { BaseEntity } from "src/common/entities/base.entity";
 import { ApiProperty } from "@nestjs/swagger";
 import { User } from "src/users/entities/user.entity";
 import { Course } from "src/courses/entities/course.entity";
 
 @Entity('enrollments')
-export class Enrollment extends EntityBase {
+export class Enrollment extends BaseEntity {
     @ApiProperty()
     @Column()
     enrolledAt: Date;

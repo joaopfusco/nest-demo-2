@@ -1,5 +1,5 @@
 import { Entity, Column, OneToMany, BeforeInsert, BeforeUpdate } from 'typeorm';
-import { EntityBase } from '../../common/entities/base.entity';
+import { BaseEntity } from '../../common/entities/base.entity';
 import { UserRole } from '../enums/user-role.enum';
 import * as argon2 from 'argon2';
 import { Exclude } from 'class-transformer';
@@ -8,7 +8,7 @@ import { Course } from 'src/courses/entities/course.entity';
 import { Enrollment } from 'src/enrollments/entities/enrollment.entity';
 
 @Entity('users')
-export class User extends EntityBase {
+export class User extends BaseEntity {
     @ApiProperty()
     @Column()
     name: string;
