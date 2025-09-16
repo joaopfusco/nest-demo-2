@@ -1,6 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsBoolean, IsNumber, IsString, IsUUID } from "class-validator";
-import { JoinColumn } from "typeorm";
 
 export class CreateCourseDto {
     @ApiProperty({ example: "NestJS com TypeORM" })
